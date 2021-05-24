@@ -123,6 +123,14 @@ describe("Signatures", function () {
         }
       )
     );
+    it(
+      "R1A - root signed but with too many transforms (DOS timeout) => error",
+      testOneResponse(
+        "/invalid/response.root-signed-transforms.assertion-unsigned.xml",
+        INVALID_SIGNATURE,
+        2
+      )
+    );
   });
 
   describe("Signatures on saml:Response - 1 saml:Assertion + 1 saml:Advice containing 1 saml:Assertion", () => {
